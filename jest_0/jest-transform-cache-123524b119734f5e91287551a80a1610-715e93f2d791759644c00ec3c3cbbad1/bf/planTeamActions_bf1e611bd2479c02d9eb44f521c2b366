@@ -1,0 +1,14 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.GET_TEAM = undefined;exports.
+
+
+
+
+getTeam = getTeam;var _axios = require('axios');var _axios2 = _interopRequireDefault(_axios);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var GET_TEAM = exports.GET_TEAM = 'GET_TEAM'; // this does the API call on the backend
+function getTeam() {return {
+    type: GET_TEAM,
+    payload: _axios2.default.get('/teamamerica').
+    then(function (res) {
+      return res.data;
+    }) };
+
+}
