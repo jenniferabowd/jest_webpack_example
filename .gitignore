@@ -3,4 +3,5 @@ client/public/
 npm-debug.log
 .env
 git
+jest_0
 
