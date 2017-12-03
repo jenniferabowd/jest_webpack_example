@@ -22,17 +22,17 @@ export class TeamAmerica extends Component {
         </div>
       );
     }
-    return team.map((teams) => {
+    return team.map((teams, i) => {
       return (
-        <div>
-          <h2>{teams.map((member, i) => {
+        <div key={i}>
+          <h2>{teams.map((member, j) => {
             return (
-              <div>{i === 0 ? member.team : undefined}</div>
+              <div key={j}>{j === 0 ? member.team : undefined}</div>
             );
           })}</h2>
-          {teams.map((member) => {
+          {teams.map((member, k) => {
             return (
-              <ul>
+              <ul key={k}>
                 <li>
                   {member.full_name}&nbsp;-&nbsp;
                   {member.role}&nbsp;
