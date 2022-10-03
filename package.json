@@ -7,8 +7,7 @@
     "start": "npm-run-all --parallel watch:server watch:build",
     "watch:build": "webpack -d --watch --progress --colors",
     "watch:server": "nodemon \"server/server.js\" --watch \"./server\"",
-    "test": "jest",
-    "lint": "eslint server client --ignore-pattern client/src --ignore-pattern client/public --ignore-pattern legacy_notes_and_workbook || true"
+    "test": "jest"
   },
   "jest": {
     "moduleNameMapper": {
@@ -17,7 +16,6 @@
     },
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
-      "<rootDir>/legacy_notes_and_workbook/",
       "<rootDir>/client/src/stylesheets/"
     ]
   },
