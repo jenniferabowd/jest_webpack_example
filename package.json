@@ -35,7 +35,7 @@
     "react-redux": "^8.0.4",
     "redux": "^4.2.0",
     "redux-promise": "^0.5.3",
-    "webpack": "2.3.2"
+    "webpack": "^5.74.0"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.0",
