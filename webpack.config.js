@@ -18,7 +18,7 @@ module.exports = {
       directory: path.join(__dirname, 'client/'),
     },
     compress: true,
-    // port: 9000,
+    port: 3000,
   },
   module: {
     rules: [
