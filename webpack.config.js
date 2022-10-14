@@ -1,24 +1,28 @@
 const webpack = require('webpack');
 const path = require('path');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  mode: 'development',
-  context: path.join(__dirname, 'client/src'),
+  mode: isDevelopment ? 'development' : 'production',
+  context: path.join(__dirname, '/client/src'),
   devtool: 'eval-source-map',
   entry: [
     './index.jsx',
   ],
   output: {
-    path: path.join(__dirname, 'client/public/'),
+    path: path.join(__dirname, '/client/public/'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '/client/public/',
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'client/'),
+      directory: path.join(__dirname, '/client/'),
+      watch: true,
     },
     compress: true,
     port: 3000,
+    hot: true,
   },
   module: {
     rules: [

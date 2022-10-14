@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import promise from 'redux-promise';
+import { configureStore } from '@reduxjs/toolkit';
 
 // this imports in my React Component
 import TeamAmerica from './components/TeamAmerica';
 
 // Redux Store
-import store from './reducers/index';
+import PlanTeam from './reducers/reducer_plan_team';
 
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+const configureStoreWithMiddleware = configureStore({ reducer: { planTeam: PlanTeam } });
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(store)}>
+  <Provider store={configureStoreWithMiddleware}>
     <TeamAmerica />
   </Provider>
   , document.getElementById('app') || document.createElement('div'),
