@@ -1,6 +1,5 @@
-// this is the json for the API to be used on the React frontend
-const team = {
-  presidents: [
+const teams = [
+  [
     {
       team: 'Presidents',
       team_id: '1',
@@ -26,7 +25,7 @@ const team = {
       role: 'President during The Great Depression and WW2. Only president to be elected 4 times.',
     },
   ],
-  client: [
+  [
     {
       team: 'US People',
       team_id: '2',
@@ -36,10 +35,6 @@ const team = {
       role: 'Average American',
     },
   ],
-};
+];
 
-module.exports = {
-  getTeam: (req, res) => {
-    res.send(team);
-  },
-};
+export { teams };
