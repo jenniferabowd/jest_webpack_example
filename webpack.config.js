@@ -2,8 +2,9 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
   context: path.join(__dirname, 'client/src'),
-  devtool: '#eval-source-map',
+  devtool: 'eval-source-map',
   entry: [
     './index.jsx',
   ],
@@ -26,12 +27,15 @@ module.exports = {
         use: [
           'file-loader',
         ],
+        type: 'javascript/auto',
       },
       {
         test: /\.(png|jpg)$/,
+        dependency: { not: ['url'] },
         use: [
           'url-loader?limit=200000',
         ],
+        type: 'javascript/auto',
       },
       {
         test: /\.(gif)$/,
@@ -45,6 +49,7 @@ module.exports = {
             },
           },
         ],
+        type: 'javascript/auto',
       },
       {
         test: /\.jsx\.html$/,
@@ -67,9 +72,5 @@ module.exports = {
       path.join(__dirname, 'node_modules'),
     ],
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
-  ],
+  plugins: [],
 };
