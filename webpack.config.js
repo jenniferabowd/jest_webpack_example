@@ -13,6 +13,13 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/',
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'client/'),
+    },
+    compress: true,
+    // port: 9000,
+  },
   module: {
     rules: [
       {
