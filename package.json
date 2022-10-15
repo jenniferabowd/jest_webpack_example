@@ -22,7 +22,6 @@
   "dependencies": {
     "@babel/core": "^7.19.3",
     "@babel/runtime": "^7.19.0",
-    "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
     "babel-loader": "^8.2.5",
     "body-parser": "^1.18.3",
@@ -30,9 +29,6 @@
     "nodemon": "^1.18.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.4",
-    "redux": "^4.2.0",
-    "redux-promise": "^0.5.3",
     "webpack": "^5.74.0"
   },
   "devDependencies": {
