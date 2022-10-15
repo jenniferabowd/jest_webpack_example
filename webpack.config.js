@@ -1,16 +1,28 @@
 const webpack = require('webpack');
 const path = require('path');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  context: path.join(__dirname, 'client/src'),
-  devtool: '#eval-source-map',
+  mode: isDevelopment ? 'development' : 'production',
+  context: path.join(__dirname, '/client/src'),
+  devtool: 'eval-source-map',
   entry: [
     './index.jsx',
   ],
   output: {
-    path: path.join(__dirname, 'client/public/'),
+    path: path.join(__dirname, '/client/public/'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '/client/public/',
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, '/client/'),
+      watch: true,
+    },
+    compress: true,
+    port: 3000,
+    hot: true,
   },
   module: {
     rules: [
@@ -26,12 +38,15 @@ module.exports = {
         use: [
           'file-loader',
         ],
+        type: 'javascript/auto',
       },
       {
         test: /\.(png|jpg)$/,
+        dependency: { not: ['url'] },
         use: [
           'url-loader?limit=200000',
         ],
+        type: 'javascript/auto',
       },
       {
         test: /\.(gif)$/,
@@ -45,6 +60,7 @@ module.exports = {
             },
           },
         ],
+        type: 'javascript/auto',
       },
       {
         test: /\.jsx\.html$/,
@@ -67,9 +83,5 @@ module.exports = {
       path.join(__dirname, 'node_modules'),
     ],
   },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
-  ],
+  plugins: [],
 };
