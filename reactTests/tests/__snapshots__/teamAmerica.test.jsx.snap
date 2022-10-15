@@ -7,11 +7,7 @@ exports[`test to see if the team renders correctly 1`] = `
   </h1>
   <div>
     <h2>
-      <div>
-        Presidents
-      </div>
-      <div />
-      <div />
+      Presidents
     </h2>
     <ul>
       <li>
@@ -34,6 +30,19 @@ exports[`test to see if the team renders correctly 1`] = `
         Franklin D. Roosevelt
          - 
         President during The Great Depression and WW2. Only president to be elected 4 times.
+         
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h2>
+      US People
+    </h2>
+    <ul>
+      <li>
+        Joe Sixpack
+         - 
+        Average American
          
       </li>
     </ul>
