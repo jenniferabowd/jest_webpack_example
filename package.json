@@ -4,7 +4,8 @@
   "description": "This is an example of a complex app using Jest",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode production --open --hot",
+    "start":"concurrently 'npm:watch' 'npm:start-dev'",
+    "start-dev": "webpack-dev-server --config ./webpack.config.js --mode production --open --hot",
     "build": "webpack --progress --mode production",
     "watch": "webpack --watch --progress --mode production",
     "test": "jest"
@@ -25,6 +26,7 @@
     "axios": "^0.27.2",
     "babel-loader": "^8.2.5",
     "body-parser": "^1.18.3",
+    "concurrently": "^7.4.0",
     "file-loader": "^0.11.2",
     "nodemon": "^1.18.3",
     "react": "^18.2.0",
